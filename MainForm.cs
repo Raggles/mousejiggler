@@ -31,6 +31,8 @@ namespace ArkaneSystems.MouseJiggle
 
         private void jiggleTimer_Tick (object sender, EventArgs e)
         {
+            if (DateTime.Now.Hour > 17 || DateTime.Now.Hour < 8)
+                return;
             // jiggle
             if (this.cbZenJiggle.Checked)
                 Jiggler.Jiggle (0, 0);
